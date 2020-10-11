@@ -1,0 +1,3244 @@
+{
+  "streams": [
+    {
+      "tap_stream_id": "contracts",
+      "key_properties": [
+        "Id"
+      ],
+      "schema": {
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "LastBillingDate": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "NextBillingDate": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PlanId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CustomerId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "IsDeletable": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "LifecycleStatus": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CustomerName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CustomerIsLocked": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "Phases": {
+            "items": {
+              "properties": {
+                "Type": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "StartDate": {
+                  "format": "date-time",
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "PlanVariantId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "PlanId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "Quantity": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "InheritStartDate": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "type": [
+              "null",
+              "array"
+            ]
+          },
+          "Balance": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ReferenceCode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Currency": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PlanGroupId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PaymentBearer": {
+            "properties": {
+              "EmailAddress": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "FirstName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "LastName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CountryCode": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Type": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "PaymentProvider": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PaymentProviderRole": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "EscalationSuspended": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "RecurringPaymentsPaused": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "CurrentPhase": {
+            "properties": {
+              "Type": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "StartDate": {
+                "format": "date-time",
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PlanVariantId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PlanId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Quantity": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              },
+              "InheritStartDate": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "PaymentProviderSupportRefunds": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "BillingSuspended": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "ThresholdBillingDisabled": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "StartDate": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "EndDate": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "BilledUntil": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PlanVariantId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Notes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CustomFields": {
+            "properties": {
+              "kostenstelle": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "OnAccountDueAfter": {
+            "properties": {
+              "Unit": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Quantity": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "stream": "contracts",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+		  "selected": true,
+            "table-key-properties": [
+              "Id"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Id"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "LastBillingDate"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "NextBillingDate"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomerId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "IsDeletable"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "LifecycleStatus"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomerName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomerIsLocked"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Phases"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Balance"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ReferenceCode"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Currency"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanGroupId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PaymentBearer"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PaymentProvider"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PaymentProviderRole"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "EscalationSuspended"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "RecurringPaymentsPaused"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CurrentPhase"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PaymentProviderSupportRefunds"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "BillingSuspended"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ThresholdBillingDisabled"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "StartDate"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "EndDate"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "BilledUntil"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanVariantId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Notes"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomFields"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "OnAccountDueAfter"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "contract_changes",
+      "key_properties": [
+        "Timestamp"
+      ],
+      "schema": {
+        "properties": {
+          "Type": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Timestamp": {
+            "format": "date-type",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "OrderId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ContractId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ChangeDate": {
+            "format": "date-type",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "NewPlanVariantId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "NewPlanId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "stream": "contract_changes",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "table-key-properties": [
+              "Timestamp"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Type"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Timestamp"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "OrderId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ContractId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ChangeDate"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "NewPlanVariantId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "NewPlanId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "customers",
+      "key_properties": [
+        "Id"
+      ],
+      "schema": {
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CreatedAt": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "IsDeletable": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "DeletedAt": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "IsLocked": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "CustomerName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CustomerSubName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ExternalCustomerId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "DebitorAccount": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CompanyName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "FirstName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "LastName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Language": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "VatId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "EmailAddress": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Tag": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Address": {
+            "properties": {
+              "Street": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "HouseNumber": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PostalCode": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "City": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Country": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "Locale": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CustomFields": {
+            "properties": {
+              "CustomFieldName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": [
+              "null",
+              "object"
+            ]
+          },
+          "DefaultBearerMedium": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CustomerType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Hidden": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "stream": "customers",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+		  "selected": true,
+            "table-key-properties": [
+              "Id"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Id"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CreatedAt"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "IsDeletable"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "DeletedAt"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "IsLocked"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomerName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomerSubName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ExternalCustomerId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "DebitorAccount"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CompanyName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "FirstName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "LastName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Language"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "VatId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "EmailAddress"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Tag"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Address"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Locale"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomFields"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "DefaultBearerMedium"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomerType"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Hidden"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "invoices",
+      "key_properties": [
+        "Id"
+      ],
+      "schema": {
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "InvoiceNumber": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CustomerId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ContractId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "SentAt": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "DueDate": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Created": {
+            "format": "date-time",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "RecipientName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "RecipientSubName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "RecipientAddress": {
+            "properties": {
+              "Street": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "HouseNumber": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PostalCode": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "City": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Country": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "Currency": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "TotalNet": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "TotalVat": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "TotalGross": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "IsInvoice": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "ExternalCustomerId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "DebitorAccount": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "DocumentDate": {
+            "format": "date",
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "stream": "invoices",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+		  "selected": true,
+            "table-key-properties": [
+              "Id"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Id"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "InvoiceNumber"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomerId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ContractId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "SentAt"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "DueDate"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Created"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "RecipientName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "RecipientSubName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "RecipientAddress"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Currency"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TotalNet"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TotalVat"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TotalGross"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "IsInvoice"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ExternalCustomerId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "DebitorAccount"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "DocumentDate"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "orders",
+      "key_properties": [
+        "Id"
+      ],
+      "schema": {
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PlanVariantId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PlanId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "AllowWithoutPaymentData": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "LineItems": {
+            "items": {
+              "properties": {
+                "VatPercentage": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "TotalNet": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "TotalGross": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "TotalVat": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "PeriodStart": {
+                  "format": "date-time",
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "PeriodEnd": {
+                  "format": "date-time",
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "PeriodMultiplier": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "ScaleAmount": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "Description": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "Quantity": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "PricePerUnit": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "ProductId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "ProductDescription": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "ComponentSubscriptions": {
+            "items": {
+              "properties": {
+                "ComponentType": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "PreventModification": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "VatPercentage": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "TotalNet": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "TotalVat": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "IsQuantityBased": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "StartDate": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "ComponentId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "Quantity": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "DiscountSubscriptions": {
+            "items": {
+              "properties": {
+                "Id": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "ContractId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "CouponCode": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "CouponId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "StartDate": {
+                  "format": "date-type",
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "DiscountId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "MeteredUsages": {
+            "items": {},
+            "type": "array"
+          },
+          "RatedItems": {
+            "items": {},
+            "type": "array"
+          },
+          "Contract": {
+            "properties": {
+              "Id": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "LastBillingDate": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "NextBillingDate": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PlanId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CustomerId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "IsDeletable": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              },
+              "LifecycleStatus": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CustomerName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CustomerIsLocked": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              },
+              "Phases": {
+                "items": {
+                  "properties": {
+                    "Type": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "StartDate": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "PlanVariantId": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "PlanId": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "Quantity": {
+                      "type": [
+                        "null",
+                        "number"
+                      ]
+                    },
+                    "InheritStartDate": {
+                      "type": [
+                        "null",
+                        "boolean"
+                      ]
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "Balance": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              },
+              "Currency": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PlanGroupId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PaymentProvider": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PaymentProviderRole": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "EscalationSuspended": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              },
+              "RecurringPaymentsPaused": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              },
+              "CurrentPhase": {
+                "properties": {
+                  "Type": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "StartDate": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "PlanVariantId": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "PlanId": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "Quantity": {
+                    "type": [
+                      "null",
+                      "number"
+                    ]
+                  },
+                  "InheritStartDate": {
+                    "type": [
+                      "null",
+                      "boolean"
+                    ]
+                  }
+                },
+                "type": "object"
+              },
+              "PaymentProviderSupportRefunds": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              },
+              "BillingSuspended": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              },
+              "ThresholdBillingDisabled": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              },
+              "StartDate": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "BilledUntil": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "PlanVariantId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CustomFields": {
+                "type": "object"
+              },
+              "OnAccountDueAfter": {
+                "properties": {
+                  "Quantity": {
+                    "type": [
+                      "null",
+                      "number"
+                    ]
+                  },
+                  "Unit": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "Currency": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Total": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "TotalVat": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "TotalGross": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "NextTotalGross": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "NextTotalGrossDate": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "IsTrial": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "TrialEndPolicy": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Status": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CreatedAt": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PlanName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PlanVariantName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "OrderType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "TriggerInterimBilling": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "CustomerId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ContractId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Customer": {
+            "properties": {
+              "ExternalCustomerId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "DebitorAccount": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CompanyName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "FirstName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "LastName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Language": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "VatId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "EmailAddress": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Address": {
+                "properties": {
+                  "Street": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "HouseNumber": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "PostalCode": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "City": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "Country": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  }
+                },
+                "type": "object"
+              },
+              "Locale": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CustomFields": {
+                "type": "object"
+              },
+              "DefaultBearerMedium": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CustomerType": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Hidden": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "ContractCustomFields": {
+            "type": "object"
+          },
+          "PreviewAfterTrial": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "CustomFields": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "stream": "orders",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+		  "selected": true,
+            "table-key-properties": [
+              "Id"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Id"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanVariantId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "AllowWithoutPaymentData"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "LineItems"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ComponentSubscriptions"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "DiscountSubscriptions"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "MeteredUsages"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "RatedItems"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Contract"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Currency"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Total"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TotalVat"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TotalGross"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "NextTotalGross"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "NextTotalGrossDate"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "IsTrial"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TrialEndPolicy"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Status"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CreatedAt"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanVariantName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "OrderType"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TriggerInterimBilling"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomerId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ContractId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Customer"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ContractCustomFields"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PreviewAfterTrial"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomFields"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "plans",
+      "key_properties": [
+        "Id"
+      ],
+      "schema": {
+        "properties": {
+          "Name": {
+            "properties": {
+              "_c": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "SetupDescription": {
+            "properties": {
+              "_c": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "PlanDescription": {
+            "properties": {
+              "_c": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "TrialEndPolicy": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "IsQuantityBased": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "Hidden": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "IsDeletable": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "RequiresOrderApproval": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "CustomFields": {
+            "type": "object"
+          },
+          "PlanGroupId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "stream": "plans",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+		  "selected": true,
+            "table-key-properties": [
+              "Id"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Name"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "SetupDescription"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanDescription"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TrialEndPolicy"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "IsQuantityBased"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Hidden"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "IsDeletable"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "RequiresOrderApproval"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CustomFields"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanGroupId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Id"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "plan_groups",
+      "key_properties": [
+        "Id"
+      ],
+      "schema": {
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "TimeGranularity": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Name": {
+            "properties": {
+              "_c": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "Currency": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PriceTaxType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "TaxPolicyId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "stream": "plan_groups",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+		  "selected": true,
+            "table-key-properties": [
+              "Id"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Id"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TimeGranularity"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Name"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Currency"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PriceTaxType"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "TaxPolicyId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "plan_variants",
+      "key_properties": [
+        "Id"
+      ],
+      "schema": {
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PlanId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "EndAfterFirstContractPeriod": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "AllowSelfService": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "AllowWithoutPaymentData": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "ContractPeriod": {
+            "properties": {
+              "Unit": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Quantity": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "LaterContractPeriod": {
+            "properties": {
+              "Unit": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Quantity": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "CancellationPeriod": {
+            "properties": {
+              "Unit": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Quantity": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "LaterCancellationPeriod": {
+            "properties": {
+              "Unit": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Quantity": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "BillingPeriod": {
+            "properties": {
+              "Unit": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Quantity": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "FeePeriod": {
+            "properties": {
+              "Unit": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Quantity": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "PlanGroupId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "PaymentPeriodMode": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Quota": {
+            "items": {
+              "properties": {
+                "ComponentId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "ComponentName": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "Quota": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "RecurringFee": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "SetupFee": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "InternalName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Description": {
+            "properties": {
+              "_c": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "BillingDateAlignment": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ExternalId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Hidden": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "IsDeletable": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "AfterFirstContractPeriodNextStep": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "stream": "plan_variants",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+		  "selected": true,
+            "table-key-properties": [
+              "Id"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Id"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "EndAfterFirstContractPeriod"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "AllowSelfService"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "AllowWithoutPaymentData"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ContractPeriod"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "LaterContractPeriod"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CancellationPeriod"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "LaterCancellationPeriod"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "BillingPeriod"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "FeePeriod"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PlanGroupId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "PaymentPeriodMode"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Quota"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "RecurringFee"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "SetupFee"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "InternalName"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Description"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "BillingDateAlignment"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "ExternalId"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "Hidden"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "IsDeletable"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "AfterFirstContractPeriodNextStep"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    }
+  ]
+}
