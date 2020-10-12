@@ -73,17 +73,25 @@ Selecting streams in the catalog.json:
 1. Download the repository
 2. Create a virtual environment and activate
 3. Install required packages
-  > pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 4. Install the tap-billwerk package
-  > python setup.py build
-  > python setup.py install
+```
+  python setup.py build
+  python setup.py install
+  ```
 5. Execute the package (see next section) 
  - if you want to call Billwerk and not the Billwerk Sandbox: comment out lines 9 and 10 in client.py and uncomment lines 13 and 14
 
-## EXECUTE THE PACKAGE
+## EXECUTE THE PACKAGE (with a target)
 If you include the state.json, orders and invoices endpoints will be synchronized since the timestamps provided in the state file
-  > tap-billwerk --config config.json --catalog catalog.json --state state.json | target-xxx --config config_xxx.json >> state.json
+```
+tap-billwerk --config config.json --catalog catalog.json --state state.json | target-xxx --config config_xxx.json >> state.json
+```
 ! The last part (>> state.json) should write an updated state file after the run but is not working correctly yet
 
 If you don't include the state file, all endpoints will be synchronized since the timestamp in the config.json ('start_date')
-  > tap-billwerk --config config.json --catalog catalog.json | target-xxx --config config_xxx.json 
+```
+tap-billwerk --config config.json --catalog catalog.json | target-xxx --config config_xxx.json 
+```
