@@ -42,7 +42,7 @@
 ```
 ### catalog.json
 - You can generate the catalog.json yourself with the command
-  >> tap-billwerk --config config.json --discover > catalog.json
+  ```tap-billwerk --config config.json --discover > catalog.json```
 and add lines in the generated file to select which streams to select (see below)
 - OR
 you can use the catalog file from the repository (catalog.json) - it has all the streams selected already. 
