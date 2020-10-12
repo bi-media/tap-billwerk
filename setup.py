@@ -5,7 +5,6 @@ setup(
     version="0.1.0",
     description="Singer.io tap for extracting data from Billwerk API",
     author="DQ",
-    #url="http://singer.io",
     classifiers=["Programming Language :: Python :: 3 :: Only"],
     py_modules=["tap_billwerk"],
     install_requires=[
@@ -26,9 +25,8 @@ setup(
     tap-billwerk=tap_billwerk:main
     """,
     packages=["tap_billwerk"],
-    package_dir={'tap-billwerk': r'C:\Users\Emilia\Desktop\DQ\BibInstitut\tap_billwerk'},
     package_data = {
-        "tap_billwerk": ["schemas\*.json"]
+        "tap_billwerk": ["tap_billwerk\schemas\*.json"]
     },
     include_package_data=True,
 )
