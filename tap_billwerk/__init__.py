@@ -13,7 +13,6 @@ def main():
     required_config_keys = ['client_id', 'client_secret', 'start_date']
     args = singer.parse_args(required_config_keys)
     
-
     config = args.config  # pylint:disable=unused-variable
     client = BillwerkClient(config)  # pylint:disable=unused-variable
     catalog = args.catalog or Catalog([])
@@ -27,9 +26,9 @@ def main():
         catalog = do_discover()
         write_catalog(catalog)
     else:
-        LOGGER.info("Starting sync mode")
+        LOGGER.info('Starting sync mode')
         do_sync(client, config, state, catalog)
         
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -1,7 +1,5 @@
-#from tap trello
 import os
 import json
-
 from singer import metadata
 from singer.catalog import Catalog
 from .streams import STREAM_OBJECTS
@@ -10,14 +8,12 @@ from .streams import STREAM_OBJECTS
 def _get_abs_path(path):
     return os.path.join(os.path.dirname(os.path.realpath(__file__)), path)
 
-
-# Load schemas from schemas folder
 def _load_schemas():
     schemas = {}
 
-    for filename in os.listdir(_get_abs_path("schemas")):
-        path = _get_abs_path("schemas") + "/" + filename
-        file_raw = filename.replace(".json", "")
+    for filename in os.listdir(_get_abs_path('schemas')):
+        path = _get_abs_path('schemas') + '/' + filename
+        file_raw = filename.replace('.json', '')
         with open(path) as file:
             schemas[file_raw] = json.load(file)
 
@@ -29,7 +25,6 @@ def do_discover():
     catalog_entries = []
 
     for stream_name, schema in raw_schemas.items():
-        # create and add catalog entry
         stream = STREAM_OBJECTS[stream_name]
         mdata = metadata.get_standard_metadata(
             schema=schema,
@@ -42,12 +37,12 @@ def do_discover():
             metadata.write(mdata, ('properties', field_name), 'inclusion', 'automatic')
 
         catalog_entry = {
-            "stream": stream_name,
-            "tap_stream_id": stream_name,
-            "schema": schema,
-            "metadata": metadata.to_list(mdata),
-            "key_properties": stream.key_properties,
+            'stream': stream_name,
+            'tap_stream_id': stream_name,
+            'schema': schema,
+            'metadata': metadata.to_list(mdata),
+            'key_properties': stream.key_properties,
         }
         catalog_entries.append(catalog_entry)
 
-    return Catalog.from_dict({"streams": catalog_entries})
+    return Catalog.from_dict({'streams': catalog_entries})

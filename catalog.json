@@ -323,7 +323,7 @@
         {
           "breadcrumb": [],
           "metadata": {
-		  "selected": true,
+		  "selected" : true,
             "table-key-properties": [
               "Id"
             ],
@@ -605,138 +605,6 @@
       ]
     },
     {
-      "tap_stream_id": "contract_changes",
-      "key_properties": [
-        "Timestamp"
-      ],
-      "schema": {
-        "properties": {
-          "Type": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "Timestamp": {
-            "format": "date-type",
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "OrderId": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "ContractId": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "ChangeDate": {
-            "format": "date-type",
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "NewPlanVariantId": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "NewPlanId": {
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "type": "object"
-      },
-      "stream": "contract_changes",
-      "metadata": [
-        {
-          "breadcrumb": [],
-          "metadata": {
-            "table-key-properties": [
-              "Timestamp"
-            ],
-            "forced-replication-method": "FULL_TABLE",
-            "valid-replication-keys": [],
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "Type"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "Timestamp"
-          ],
-          "metadata": {
-            "inclusion": "automatic"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "OrderId"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "ContractId"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "ChangeDate"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "NewPlanVariantId"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "NewPlanId"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        }
-      ]
-    },
-    {
       "tap_stream_id": "customers",
       "key_properties": [
         "Id"
@@ -928,7 +796,7 @@
         {
           "breadcrumb": [],
           "metadata": {
-		  "selected": true,
+		  "selected" : true,
             "table-key-properties": [
               "Id"
             ],
@@ -1293,12 +1161,14 @@
         {
           "breadcrumb": [],
           "metadata": {
-		  "selected": true,
+		  "selected" : true,
             "table-key-properties": [
               "Id"
             ],
-            "forced-replication-method": "FULL_TABLE",
-            "valid-replication-keys": [],
+            "forced-replication-method": "INCREMENTAL",
+            "valid-replication-keys": [
+              "CreatedAt"
+            ],
             "inclusion": "available"
           }
         },
@@ -1462,6 +1332,15 @@
           ],
           "metadata": {
             "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "CreatedAt"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
           }
         }
       ]
@@ -2173,12 +2052,14 @@
         {
           "breadcrumb": [],
           "metadata": {
-		  "selected": true,
+		  "selected" : true,
             "table-key-properties": [
               "Id"
             ],
-            "forced-replication-method": "FULL_TABLE",
-            "valid-replication-keys": [],
+            "forced-replication-method": "INCREMENTAL",
+            "valid-replication-keys": [
+              "CreatedAt"
+            ],
             "inclusion": "available"
           }
         },
@@ -2359,7 +2240,7 @@
             "CreatedAt"
           ],
           "metadata": {
-            "inclusion": "available"
+            "inclusion": "automatic"
           }
         },
         {
@@ -2547,7 +2428,7 @@
         {
           "breadcrumb": [],
           "metadata": {
-		  "selected": true,
+		  "selected" : true,
             "table-key-properties": [
               "Id"
             ],
@@ -2713,7 +2594,7 @@
         {
           "breadcrumb": [],
           "metadata": {
-		  "selected": true,
+		  "selected" : true,
             "table-key-properties": [
               "Id"
             ],
@@ -3022,7 +2903,7 @@
         {
           "breadcrumb": [],
           "metadata": {
-		  "selected": true,
+		  "selected" : true,
             "table-key-properties": [
               "Id"
             ],
