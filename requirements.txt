@@ -21,6 +21,5 @@ singer-discover-catalog==0.1.0
 singer-python==5.9.0
 singer-target-postgres==0.2.4
 six==1.15.0
-tap-billwerk==0.1.0
 urllib3==1.25.10
 wcwidth==0.2.5
