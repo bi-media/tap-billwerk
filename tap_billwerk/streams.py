@@ -5,7 +5,7 @@ from singer import utils
 LOGGER = singer.get_logger()
 
 
-class DateWindowPaginated:
+class DateWindowing:
 
 
     stream_id = None
@@ -21,10 +21,11 @@ class DateWindowPaginated:
     MAX_API_RESPONSE_SIZE = 500
     params = {}
 
+    # get date window according from config.json and/or state.json
     def _get_window_state(self):
         window_start = singer.get_bookmark(self.state, self.stream_id, 'last_record')
-        sub_window_end = utils.strftime(utils.now())
-        window_end = utils.strftime(utils.now())
+        sub_window_end = singer.get_bookmark(self.state, self.stream_id, 'sub_window_end')
+        window_end = singer.get_bookmark(self.state, self.stream_id, 'window_end')
 
         # adjusting window to lookback 1 day
         adjusted_window_start = utils.strftime(utils.strptime_to_utc(window_start)
@@ -39,25 +40,29 @@ class DateWindowPaginated:
 
         return window_start, sub_window_end, window_end
 
+    # fill missing bookmarks with now()
     def on_window_started(self):
         if singer.get_bookmark(self.state, self.stream_id, 'sub_window_end') is None:
             if singer.get_bookmark(self.state, self.stream_id, 'last_record') is None:
-                singer.write_bookmark(self.state, self.stream_id, "last_record", self.config.get('start_date'))
+                singer.write_bookmark(self.state, self.stream_id, 'last_record',
+                                      self.config.get('start_date'))
             if singer.get_bookmark(self.state, self.stream_id, 'window_end') is None:
                 now = utils.strftime(utils.now())
-                singer.write_bookmark(self.state, self.stream_id, "window_end", min(self.config.get('end_date', now), now))
+                singer.write_bookmark(self.state, self.stream_id, 'window_end',
+                                      min(self.config.get('end_date', now), now))
         singer.write_state(self.state)
 
+    # update bookmark for end state.json
     def on_window_finished(self):
-        # Set window_start to current window_end
         window_start = singer.get_bookmark(self.state, self.stream_id, 'window_end')
         singer.write_bookmark(self.state, self.stream_id, 'last_record', window_start)
         singer.clear_bookmark(self.state, self.stream_id, 'window_end')
         singer.write_state(self.state)
 
+    # get the gecords by calling _paginate_windows()
     def get_records(self, format_values):
         window_start, sub_window_end, window_end = self._get_window_state()
-        window_start -= timedelta(milliseconds=1) # To make start inclusive
+        window_start -= timedelta(milliseconds=1)
 
         if sub_window_end is not None:
             for rec in self._paginate_window(window_start, sub_window_end, format_values):
@@ -65,7 +70,6 @@ class DateWindowPaginated:
         else:
             for rec in self._paginate_window(window_start, window_end, format_values):
                 yield rec
-
 
     def _update_bookmark(self, key, value):
         singer.bookmarks.write_bookmark(
@@ -75,12 +79,12 @@ class DateWindowPaginated:
     def _paginate_window(self, window_start, window_end, format_values):
         sub_window_end = window_end
         while True:
-            records = self.client.get(self._format_endpoint(format_values), 
+            records = self.client.get(self._format_endpoint(format_values),
                                       params={'take': self.MAX_API_RESPONSE_SIZE,
-                                              'dateFrom': utils.strftime(window_start), # pylint: disable=no-member
+                                              'dateFrom': utils.strftime(window_start),
                                               'dateTo': utils.strftime(sub_window_end),
                                               **self.params})
-    
+
             for rec in records:
                 yield rec
 
@@ -89,8 +93,9 @@ class DateWindowPaginated:
                             self.stream_id,
                             utils.strftime(window_start), utils.strftime(sub_window_end))
 
-                sub_window_end = utils.strptime_to_utc(records[-1].get('CreatedAt', 
-                                                       records[-1].get('Created'))) + timedelta(milliseconds=1)
+                sub_window_end = utils.strptime_to_utc(records[-1].get('CreatedAt',
+                                                                       records[-1].get('Created'))) \
+                                                                       + timedelta(milliseconds=1)
                 self._update_bookmark('sub_window_end', sub_window_end)
                 singer.write_state(self.state)
             else:
@@ -98,7 +103,7 @@ class DateWindowPaginated:
                             self.stream_id,
                             utils.strftime(window_start),
                             window_end)
-                singer.bookmarks.clear_bookmark(self.state, self.stream_id, 
+                singer.bookmarks.clear_bookmark(self.state, self.stream_id,
                                                 'sub_window_end')
                 break
 
@@ -145,24 +150,21 @@ class Stream:
                 **additional_params
             })
         json_data = records
-        
+
         while len(json_data) == self.MAX_API_RESPONSE_SIZE:
             last_entry = json_data[-1]['Id']
             records.remove(records[-1])
             json_data = self.client.get(self._format_endpoint(format_values),
-            params={
-                'take': self.MAX_API_RESPONSE_SIZE,
-                'from': last_entry,
-                **self.params,
-                **additional_params
-            })
+                                        params={'take': self.MAX_API_RESPONSE_SIZE,
+                                                'from': last_entry,
+                                                **self.params,
+                                                **additional_params})
             records = records + json_data
 
-
         for rec in records:
-            yield self.modify_record(rec, parent_id_list = format_values, 
-                                      custom_fields_map = custom_fields_map, 
-                                      dropdown_options_map = dropdown_options_map)
+            yield self.modify_record(rec, parent_id_list=format_values,
+                                     custom_fields_map=custom_fields_map,
+                                     dropdown_options_map=dropdown_options_map)
 
     def sync(self):
         if self.replication_method == 'INCREMENTAL':
@@ -171,9 +173,8 @@ class Stream:
                 yield rec
             self.on_window_finished()
         else:
-             for rec in self.get_records(self.get_format_values()):
-                yield rec 
-            
+            for rec in self.get_records(self.get_format_values()):
+                yield rec
 
 
 class Contracts(Stream):
@@ -189,44 +190,44 @@ class ContractChanges(Stream):
     endpoint = 'contractChanges'
     key_properties = ['Timestamp']
     replication_method = 'FULL_TABLE'
-    
+
 class Customers(Stream):
     stream_id = 'customers'
     stream_name = 'customers'
     endpoint = 'customers'
     key_properties = ['Id']
-    replication_method = 'FULL_TABLE'    
-    
-class Invoices(DateWindowPaginated, Stream):
+    replication_method = 'FULL_TABLE'
+
+class Invoices(DateWindowing, Stream):
     stream_id = 'invoices'
     stream_name = 'invoices'
     endpoint = 'invoices'
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
     replication_keys = ['CreatedAt']
-    
-class Orders(DateWindowPaginated, Stream):
+
+class Orders(DateWindowing, Stream):
     stream_id = 'orders'
     stream_name = 'orders'
     endpoint = 'orders'
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
     replication_keys = ['CreatedAt']
-    
+
 class PlanGroups(Stream):
     stream_id = 'plan_groups'
     stream_name = 'plan_groups'
     endpoint = 'planGroups'
     key_properties = ['Id']
     replication_method = 'FULL_TABLE'
-    
+
 class Plans(Stream):
     stream_id = 'plans'
     stream_name = 'plans'
     endpoint = 'plans'
     key_properties = ['Id']
     replication_method = 'FULL_TABLE'
-    
+
 class PlanVariants(Stream):
     stream_id = 'plan_variants'
     stream_name = 'plan_variants'

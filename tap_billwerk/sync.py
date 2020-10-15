@@ -1,7 +1,7 @@
 import singer
 from singer import Transformer, metadata
 
-from .streams import STREAM_OBJECTS
+from tap_billwerk.streams import STREAM_OBJECTS
 
 LOGGER = singer.get_logger()
 

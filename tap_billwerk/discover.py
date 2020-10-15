@@ -2,7 +2,7 @@ import os
 import json
 from singer import metadata
 from singer.catalog import Catalog
-from .streams import STREAM_OBJECTS
+from tap_billwerk.streams import STREAM_OBJECTS
 
 
 def _get_abs_path(path):
@@ -30,8 +30,7 @@ def do_discover():
             schema=schema,
             key_properties=stream.key_properties,
             valid_replication_keys=stream.replication_keys,
-            replication_method=stream.replication_method,
-        )
+            replication_method=stream.replication_method )
         mdata = metadata.to_map(mdata)
         for field_name in stream.replication_keys:
             metadata.write(mdata, ('properties', field_name), 'inclusion', 'automatic')
@@ -41,8 +40,7 @@ def do_discover():
             'tap_stream_id': stream_name,
             'schema': schema,
             'metadata': metadata.to_list(mdata),
-            'key_properties': stream.key_properties,
-        }
+            'key_properties': stream.key_properties}
         catalog_entries.append(catalog_entry)
 
     return Catalog.from_dict({'streams': catalog_entries})
