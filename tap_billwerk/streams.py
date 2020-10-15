@@ -18,7 +18,7 @@ class DateWindowPaginated:
     config = None
     state = None
     client = None
-    MAX_API_RESPONSE_SIZE = 30
+    MAX_API_RESPONSE_SIZE = 500
     params = {}
 
     def _get_window_state(self):
@@ -42,7 +42,7 @@ class DateWindowPaginated:
     def on_window_started(self):
         if singer.get_bookmark(self.state, self.stream_id, 'sub_window_end') is None:
             if singer.get_bookmark(self.state, self.stream_id, 'last_record') is None:
-                singer.write_bookmark(self.state, self.stream_id, "window_start", self.config.get('start_date'))
+                singer.write_bookmark(self.state, self.stream_id, "last_record", self.config.get('start_date'))
             if singer.get_bookmark(self.state, self.stream_id, 'window_end') is None:
                 now = utils.strftime(utils.now())
                 singer.write_bookmark(self.state, self.stream_id, "window_end", min(self.config.get('end_date', now), now))
@@ -110,7 +110,7 @@ class Stream:
     replication_keys = []
     replication_method = None
     _last_bookmark_value = None
-    MAX_API_RESPONSE_SIZE = 30
+    MAX_API_RESPONSE_SIZE = 500
     params = {}
 
     def __init__(self, client, config, state):
