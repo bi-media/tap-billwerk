@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 
 class DateWindowPaginated:
 
-    
+
     stream_id = None
     stream_name = None
     endpoint = None
@@ -18,7 +18,7 @@ class DateWindowPaginated:
     config = None
     state = None
     client = None
-    MAX_API_RESPONSE_SIZE = 500
+    MAX_API_RESPONSE_SIZE = 30
     params = {}
 
     def _get_window_state(self):
@@ -27,7 +27,8 @@ class DateWindowPaginated:
         window_end = utils.strftime(utils.now())
 
         # adjusting window to lookback 1 day
-        adjusted_window_start = utils.strftime(utils.strptime_to_utc(window_start)-timedelta(days=1))
+        adjusted_window_start = utils.strftime(utils.strptime_to_utc(window_start)
+                                               -timedelta(days=1))
 
         start_date = self.config.get('start_date')
         end_date = utils.strftime(utils.now())
@@ -41,12 +42,10 @@ class DateWindowPaginated:
     def on_window_started(self):
         if singer.get_bookmark(self.state, self.stream_id, 'sub_window_end') is None:
             if singer.get_bookmark(self.state, self.stream_id, 'last_record') is None:
-                singer.write_bookmark(self.state, self.stream_id, 'last_record', 
-                                      self.config.get('start_date'))
+                singer.write_bookmark(self.state, self.stream_id, "window_start", self.config.get('start_date'))
             if singer.get_bookmark(self.state, self.stream_id, 'window_end') is None:
                 now = utils.strftime(utils.now())
-                singer.write_bookmark(self.state, self.stream_id, 'window_end', 
-                                      min(self.config.get('end_date', now), now))
+                singer.write_bookmark(self.state, self.stream_id, "window_end", min(self.config.get('end_date', now), now))
         singer.write_state(self.state)
 
     def on_window_finished(self):
@@ -85,7 +84,7 @@ class DateWindowPaginated:
             for rec in records:
                 yield rec
 
-            if len(records) >= self.MAX_API_RESPONSE_SIZE:
+            if len(records) == self.MAX_API_RESPONSE_SIZE:
                 LOGGER.info('%s - Paginating within date_window %s to %s, due to max records being received.',
                             self.stream_id,
                             utils.strftime(window_start), utils.strftime(sub_window_end))
@@ -111,7 +110,7 @@ class Stream:
     replication_keys = []
     replication_method = None
     _last_bookmark_value = None
-    MAX_API_RESPONSE_SIZE = 500
+    MAX_API_RESPONSE_SIZE = 30
     params = {}
 
     def __init__(self, client, config, state):
@@ -166,8 +165,14 @@ class Stream:
                                       dropdown_options_map = dropdown_options_map)
 
     def sync(self):
-        for rec in self.get_records(self.get_format_values()):
-            yield rec
+        if self.replication_method == 'INCREMENTAL':
+            self.on_window_started()
+            for rec in self.get_records(self.get_format_values()):
+                yield rec
+            self.on_window_finished()
+        else:
+             for rec in self.get_records(self.get_format_values()):
+                yield rec 
             
 
 
