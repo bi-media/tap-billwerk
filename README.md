@@ -6,12 +6,13 @@
 - deleted Subscriptions endpoint
 - imlpemented pagination (!!! problem with ContractChanges endpoint)
 - implemented incremental load (still needs some testing)
-
-### TO DOs:
 - Incremental load tests (orders and invoices)
 - Talk to Billwerk about ContractChanges
 - State.json file generation not working correctly
 - Code comments and documentation
+
+### TO DOs:
+
 
 
 ## PREPARE FILES
