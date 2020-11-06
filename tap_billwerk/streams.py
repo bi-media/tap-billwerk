@@ -235,6 +235,14 @@ class PlanVariants(Stream):
     key_properties = ['Id']
     replication_method = 'FULL_TABLE'
 
+class Subscriptions(DateWindowing, Stream):
+    stream_id = 'subscriptions'
+    stream_name = 'subscriptions'
+    endpoint = 'subscriptions'
+    key_properties = ['Id']
+    replication_method = 'INCREMENTAL'
+    replication_keys = ['LastPhaseChange']
+
 
 STREAM_OBJECTS = {
     'contracts' : Contracts,
@@ -244,5 +252,6 @@ STREAM_OBJECTS = {
     'orders': Orders,
     'plan_groups' : PlanGroups,
     'plans' : Plans,
-    'plan_variants' : PlanVariants
+    'plan_variants' : PlanVariants,
+    'subscriptions' : Subscriptions
     }
