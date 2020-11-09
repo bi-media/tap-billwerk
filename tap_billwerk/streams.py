@@ -299,6 +299,7 @@ STREAM_OBJECTS = {
     'components': Components,
     'discounts': Discounts,
     'coupons': Coupons,
+    'tax_policies': TaxPolicies,
     'subscriptions' : Subscriptions,
     'payment_transactions': PaymentTransactions,
     'payment_refunds': PaymentRefunds,
