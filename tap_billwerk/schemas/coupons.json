@@ -41,5 +41,6 @@
     "Hidden": {
       "type": ["null", "boolean"]
     }
-  }
+  },
+  "additionalProperties": false
 }

@@ -178,5 +178,6 @@
         "boolean"
       ]
     }
-  }
+  },
+  "additionalProperties": false
 }

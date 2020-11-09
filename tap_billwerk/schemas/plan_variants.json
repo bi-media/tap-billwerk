@@ -233,5 +233,6 @@
                 "string"
             ]
         }
-    }
+    },
+    "additionalProperties": false
 }

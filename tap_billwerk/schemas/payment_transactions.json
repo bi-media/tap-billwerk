@@ -84,5 +84,6 @@
     "Preauth": {
       "type": ["null", "boolean"]
     }
-  }
+  },
+  "additionalProperties": false
 }

@@ -49,5 +49,6 @@
         "Id": {
             "type": ["null", "string"]
         }
-    }
+    },
+    "additionalProperties": false
 }

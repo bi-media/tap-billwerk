@@ -142,5 +142,6 @@
       ],
       "format": "date"
     }
-  }
+  },
+  "additionalProperties": false
 }

@@ -83,5 +83,6 @@
     "IsDeletable": {
       "type": ["null", "boolean"]
     }
-  }
+  },
+  "additionalProperties": false
 }

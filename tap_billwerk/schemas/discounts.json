@@ -44,5 +44,6 @@
     "PlanGroupId": {
       "type": ["null", "string"]
     }
-  }
+  },
+  "additionalProperties": false
 }
