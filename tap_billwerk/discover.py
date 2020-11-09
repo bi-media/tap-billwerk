@@ -29,11 +29,17 @@ def do_discover():
         mdata = metadata.get_standard_metadata(
             schema=schema,
             key_properties=stream.key_properties,
-            valid_replication_keys=stream.replication_keys,
             replication_method=stream.replication_method )
         mdata = metadata.to_map(mdata)
-        for field_name in stream.replication_keys:
-            metadata.write(mdata, ('properties', field_name), 'inclusion', 'automatic')
+
+        if stream.replication_key:
+            mdata = metadata.write(mdata, (), 'valid-replication-keys', [stream.replication_key])
+
+        for field_name in schema['properties'].keys():
+            if field_name in stream.key_properties or field_name == stream.replication_key:
+                mdata = metadata.write(mdata, ('properties', field_name), 'inclusion', 'automatic')
+            else:
+                mdata = metadata.write(mdata, ('properties', field_name), 'inclusion', 'available')
 
         catalog_entry = {
             'stream': stream_name,

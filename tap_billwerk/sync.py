@@ -21,7 +21,7 @@ def do_sync(client, config, state, catalog):
             stream_id,
             stream_schema.to_dict(),
             stream_object.key_properties,
-            stream_object.replication_keys,
+            stream_object.replication_key,
         )
 
         LOGGER.info('Syncing stream: %s', stream_id)

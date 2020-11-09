@@ -12,7 +12,7 @@ class DateWindowing:
     stream_name = None
     endpoint = None
     key_properties = None
-    replication_keys = []
+    replication_key = ''
     replication_method = None
     _last_bookmark_value = None
     config = None
@@ -93,9 +93,7 @@ class DateWindowing:
                             self.stream_id,
                             utils.strftime(window_start), utils.strftime(sub_window_end))
 
-                sub_window_end = utils.strptime_to_utc(records[-1].get('CreatedAt',
-                                                                       records[-1].get('Created'))) \
-                                                                       + timedelta(milliseconds=1)
+                sub_window_end = utils.strptime_to_utc(records[-1].get(self.replication_key,records[-1].get(self.replication_key))) + timedelta(milliseconds=1)
                 self._update_bookmark('sub_window_end', sub_window_end)
                 singer.write_state(self.state)
             else:
@@ -112,7 +110,7 @@ class Stream:
     stream_name = None
     endpoint = None
     key_properties = None
-    replication_keys = []
+    replication_key = ''
     replication_method = None
     _last_bookmark_value = None
     MAX_API_RESPONSE_SIZE = 500
@@ -204,7 +202,7 @@ class Invoices(DateWindowing, Stream):
     endpoint = 'invoices'
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
-    replication_keys = ['CreatedAt']
+    replication_key = 'Created'
 
 class Orders(DateWindowing, Stream):
     stream_id = 'orders'
@@ -212,7 +210,7 @@ class Orders(DateWindowing, Stream):
     endpoint = 'orders'
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
-    replication_keys = ['CreatedAt']
+    replication_key = 'CreatedAt'
 
 class PlanGroups(Stream):
     stream_id = 'plan_groups'
@@ -269,7 +267,7 @@ class Subscriptions(DateWindowing, Stream):
     endpoint = 'subscriptions'
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
-    replication_keys = ['LastPhaseChange']
+    replication_key = 'LastPhaseChange'
 
 class PaymentTransactions(DateWindowing, Stream):
     stream_id = 'payment_transactions'
@@ -277,7 +275,7 @@ class PaymentTransactions(DateWindowing, Stream):
     endpoint = 'PaymentTransactions'
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
-    replication_keys = ['StatusTimestamp']
+    replication_key = 'StatusTimestamp'
 
 class PaymentRefunds(DateWindowing, Stream):
     stream_id = 'payments_refunds'
@@ -285,7 +283,7 @@ class PaymentRefunds(DateWindowing, Stream):
     endpoint = 'PaymentRefunds'
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
-    replication_keys = ['TimeStamp']
+    replication_key = 'TimeStamp'
 
 STREAM_OBJECTS = {
     'contracts' : Contracts,
