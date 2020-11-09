@@ -22,7 +22,9 @@ def main():
     client = BillwerkClient(config)
 
     if args.properties and not args.catalog:
-        raise Exception("DEPRECATED: Use of the 'properties' parameter is not supported. Please use --catalog instead")
+        raise Exception(
+            "DEPRECATED: Use of the 'properties' parameter is not supported. Please use --catalog instead"
+        )
 
     if args.discover:
         LOGGER.info("Starting discovery mode")
