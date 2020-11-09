@@ -7,7 +7,6 @@ LOGGER = singer.get_logger()
 
 class DateWindowing:
 
-
     stream_id = None
     stream_name = None
     endpoint = None
