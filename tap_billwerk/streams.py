@@ -256,6 +256,13 @@ class Discounts(Stream):
     key_properties = ['Id']
     replication_method = 'FULL_TABLE'
 
+class Coupons(Stream):
+    stream_id = 'coupons'
+    stream_name = 'coupons'
+    endpoint = 'coupons'
+    key_properties = ['Id']
+    replication_method = 'FULL_TABLE'
+
 class Subscriptions(DateWindowing, Stream):
     stream_id = 'subscriptions'
     stream_name = 'subscriptions'
@@ -291,6 +298,7 @@ STREAM_OBJECTS = {
     'plan_variants' : PlanVariants,
     'components': Components,
     'discounts': Discounts,
+    'coupons': Coupons,
     'subscriptions' : Subscriptions,
     'payment_transactions': PaymentTransactions,
     'payment_refunds': PaymentRefunds,
