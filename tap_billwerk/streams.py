@@ -235,6 +235,13 @@ class PlanVariants(Stream):
     key_properties = ['Id']
     replication_method = 'FULL_TABLE'
 
+class TaxPolicies(Stream):
+    stream_id = 'tax_policies'
+    stream_name = 'tax_policies'
+    endpoint = 'taxPolicies'
+    key_properties = ['Id']
+    replication_method = 'FULL_TABLE'
+
 class Subscriptions(DateWindowing, Stream):
     stream_id = 'subscriptions'
     stream_name = 'subscriptions'
