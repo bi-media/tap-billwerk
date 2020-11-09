@@ -251,6 +251,14 @@ class PaymentTransactions(DateWindowing, Stream):
     replication_method = 'INCREMENTAL'
     replication_keys = ['StatusTimestamp']
 
+class PaymentRefunds(DateWindowing, Stream):
+    stream_id = 'payments_refunds'
+    stream_name = 'payments_refunds'
+    endpoint = 'PaymentRefunds'
+    key_properties = ['Id']
+    replication_method = 'INCREMENTAL'
+    replication_keys = ['TimeStamp']
+
 STREAM_OBJECTS = {
     'contracts' : Contracts,
     'contract_changes' : ContractChanges,
@@ -261,5 +269,6 @@ STREAM_OBJECTS = {
     'plans' : Plans,
     'plan_variants' : PlanVariants,
     'subscriptions' : Subscriptions,
-    'payment_transactions': PaymentTransactions
+    'payment_transactions': PaymentTransactions,
+    'payment_refunds': PaymentRefunds,
     }
