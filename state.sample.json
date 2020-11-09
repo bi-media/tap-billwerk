@@ -8,6 +8,12 @@
     },
     "subscriptions": {
       "last_record" : "2020-11-06T21:23:54.022348Z"
+    },
+    "payment_transactions": {
+      "last_record" : "2020-11-06T21:23:54.022348Z"
+    },
+    "payment_refunds": {
+      "last_record" : "2020-11-06T21:23:54.022348Z"
     }
   }
 }
