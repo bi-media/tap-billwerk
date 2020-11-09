@@ -242,6 +242,13 @@ class TaxPolicies(Stream):
     key_properties = ['Id']
     replication_method = 'FULL_TABLE'
 
+class Components(Stream):
+    stream_id = 'components'
+    stream_name = 'components'
+    endpoint = 'components'
+    key_properties = ['Id']
+    replication_method = 'FULL_TABLE'
+
 class Subscriptions(DateWindowing, Stream):
     stream_id = 'subscriptions'
     stream_name = 'subscriptions'
@@ -275,6 +282,7 @@ STREAM_OBJECTS = {
     'plan_groups' : PlanGroups,
     'plans' : Plans,
     'plan_variants' : PlanVariants,
+    'components': Components,
     'subscriptions' : Subscriptions,
     'payment_transactions': PaymentTransactions,
     'payment_refunds': PaymentRefunds,
