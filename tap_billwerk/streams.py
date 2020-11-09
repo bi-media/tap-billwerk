@@ -20,6 +20,8 @@ class DateWindowing:
     client = None
     MAX_API_RESPONSE_SIZE = 500
     params = {}
+    field_dateFrom = 'dateFrom'
+    field_dateTo = 'dateTo'
 
     # get date window according from config.json and/or state.json
     def _get_window_state(self):
@@ -81,8 +83,8 @@ class DateWindowing:
         while True:
             records = self.client.get(self._format_endpoint(format_values),
                                       params={'take': self.MAX_API_RESPONSE_SIZE,
-                                              'dateFrom': utils.strftime(window_start),
-                                              'dateTo': utils.strftime(sub_window_end),
+                                              self.field_dateFrom: utils.strftime(window_start),
+                                              self.field_dateTo: utils.strftime(sub_window_end),
                                               **self.params})
 
             for rec in records:
@@ -115,6 +117,8 @@ class Stream:
     _last_bookmark_value = None
     MAX_API_RESPONSE_SIZE = 500
     params = {}
+    field_dateFrom = 'dateFrom'
+    field_dateTo = 'dateTo'
 
     def __init__(self, client, config, state):
         self.client = client
@@ -267,7 +271,9 @@ class Subscriptions(DateWindowing, Stream):
     endpoint = 'subscriptions'
     key_properties = ['Id']
     replication_method = 'INCREMENTAL'
-    replication_key = 'LastPhaseChange'
+    replication_key = 'StartDate'
+    field_dateFrom = 'contractStartFrom'
+    field_dateTo = 'contractStartTo'
 
 class PaymentTransactions(DateWindowing, Stream):
     stream_id = 'payment_transactions'
