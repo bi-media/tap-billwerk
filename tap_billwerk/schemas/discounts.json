@@ -16,7 +16,7 @@
       }
     },
     "Effect": {
-      "type": "object",
+      "type": ["null", "object"],
       "properties": {
         "ReductionPercent": {
           "type": ["null", "number"]

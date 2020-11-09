@@ -25,7 +25,7 @@
       "type": ["null", "boolean"]
     },
     "Name": {
-      "type": "object",
+      "type": ["null", "object"],
       "properties": {
         "Quantity": {
           "_c": ["null", "string"]
@@ -33,7 +33,7 @@
       }
     },
     "Description": {
-      "type": "object",
+      "type": ["null", "object"],
       "properties": {
         "Quantity": {
           "_c": ["null", "string"]
@@ -68,7 +68,7 @@
       "type": ["null", "string"]
     },
     "PriceScale": {
-      "type": "object",
+      "type": ["null", "object"],
       "properties": {
         "IsCumulative": {
           "_c": ["null", "string"]
