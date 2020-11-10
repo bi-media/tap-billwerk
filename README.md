@@ -12,8 +12,17 @@
 - Code comments and documentation
 
 ### TO DOs:
+- ContractChanges
+- Integrate LedgerEntries: https://sandbox.billwerk.com/api/v1/contracts/5fa12c909e437889262423d0/Ledgerentries
+- Integrate Endpoint: https://sandbox.billwerk.com/api/v1/TaxDefinitions
+- Integrate Chargeback Endpoint: https://sandbox.billwerk.com/api/v1/Chargebackfees
+- Integrate Postings: https://sandbox.billwerk.com/api/v1/postingGroups/postings 
 
-
+### Where incremental would be cool
+- ContractChanges
+- Better for Subscriptions
+- Contracts
+- Customer
 
 ## PREPARE FILES
 ### config.json:
@@ -22,7 +31,7 @@
   "client_id" : "",
   "client_secret" : "",
   "start_date" : "",
-  "token" : ""
+  "token" : "" //remove by default because with empty it is not working
 }
 ```
 - start_date format:  2020-01-22T16:22:45.0000000Z
@@ -92,7 +101,14 @@ tap-billwerk --config config.json --catalog catalog.json --state state.json | ta
 ```
 ! The last part (>> state.json) should write an updated state file after the run but is not working correctly yet
 
+After write state.json do this to extract online the last actual line
+```
+tail -1 state.json > state.json.tmp && mv state.json.tmp state.json
+```
 If you don't include the state file, all endpoints will be synchronized since the timestamp in the config.json ('start_date')
 ```
 tap-billwerk --config config.json --catalog catalog.json | target-xxx --config config_xxx.json 
+
+/home/ubuntu/.virtualenvs/tap-billwerk/bin/tap-billwerk --config config.json --catalog catalog.json --state state.json | /home/ubuntu/.virtualenvs/target-stitch/bin/target-stitch --config target-stitch-config.json >> state.json | tail -1 state.json > state.json.tmp && mv state.json.tmp state.json
+
 ```
