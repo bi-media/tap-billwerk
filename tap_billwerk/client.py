@@ -4,15 +4,7 @@ import singer
 import backoff
 
 LOGGER = singer.get_logger()
-
-    #### Billwerk Sandbox ####
-BASE_ID_URL = 'https://sandbox.billwerk.com/'
-BASE_API_URL = 'https://sandbox.billwerk.com/api/v1/'
-
-    #### Billwerk ####
-# BASE_ID_URL =  'https://app.billwerk.com/'
-# BASE_API_URL = 'https://app.billwerk.com/api/v1/'
-
+API_PATH = '/api/v1/'
 
 class BillwerkClient():
 
@@ -23,12 +15,14 @@ class BillwerkClient():
         self._client_id = config['client_id']
         self._client_secret = config['client_secret']
         self._access_token = config.get('token', None)
+        self._domain = config.get('domain')
+        self._apiurl = config.get('domain') + API_PATH
 
     # Send request to get the API token
     def _refresh_access_token(self):
 
         LOGGER.info('Refreshing access token')
-        url = BASE_ID_URL + 'oauth/token/'
+        url =  self._domain + '/oauth/token/'
         data = {'client_id' : self._client_id,
                 'client_secret' : self._client_secret,
                 'grant_type' : 'client_credentials'}
@@ -59,7 +53,7 @@ class BillwerkClient():
     @backoff.on_exception(backoff.constant, (requests.exceptions.HTTPError), max_tries=3, interval=10)
     def _make_request(self, method, endpoint, headers=None, params=None):
 
-        full_url = BASE_API_URL + endpoint
+        full_url = self._apiurl + endpoint
         LOGGER.info('%s - Making request to %s endpoint %s, with params %s',
                     full_url,
                     method.upper(),
