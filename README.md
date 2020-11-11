@@ -1,5 +1,10 @@
 # tap-billwerk
 
+## Requierements
+- Python 3.7.1
+- pip 10.0.1
+- setuptools 39.0.1
+
 ## UPDATE
 ### DONE
 - fixed the nested schema structures
@@ -46,6 +51,15 @@
     },
     "invoices": {
       "last_record" : "2020-01-22T16:22:45.0000000Z"
+    },
+    "payment_transactions": {
+      "last_record" : "2020-01-22T16:22:45.0000000Z"
+    },
+    "payment_refunds": {
+      "last_record" : "2020-01-22T16:22:45.0000000Z"
+    },
+    "subscriptions": {
+      "last_record" : "2020-01-22T16:22:45.0000000Z"
     }
   }
 }
@@ -82,13 +96,15 @@ Selecting streams in the catalog.json:
 ## PREPARE THE PACKAGE
 1. Download the repository
 2. Create a virtual environment and activate
+```
+```
 3. Install required packages
 ```
 pip install -r requirements.txt
 ```
-4. Install the tap-billwerk package
+4. Install the tap-billwerk package in activated python billwerk environment
 ```
-  python setup.py build
+  python setup.py build --force
   python setup.py install
   ```
 5. Execute the package (see next section) 
