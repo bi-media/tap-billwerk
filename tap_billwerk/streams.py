@@ -28,9 +28,9 @@ class DateWindowing:
         sub_window_end = singer.get_bookmark(self.state, self.stream_id, 'sub_window_end')
         window_end = singer.get_bookmark(self.state, self.stream_id, 'window_end')
 
-        # adjusting window to lookback 1 day
+        # adjusting window to lookback 1 hour
         adjusted_window_start = utils.strftime(utils.strptime_to_utc(window_start)
-                                               -timedelta(days=1))
+                                               -timedelta(hours=1))
 
         start_date = self.config.get('start_date')
         end_date = utils.strftime(utils.now())
