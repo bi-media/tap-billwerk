@@ -149,7 +149,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "invoices",
       "metadata": [
@@ -379,7 +380,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "plan_groups",
       "metadata": [
@@ -687,7 +689,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "plan_variants",
       "metadata": [
@@ -990,14 +993,15 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "tax_policies",
       "metadata": [
         {
           "breadcrumb": [],
           "metadata": {
-	    "selected":true,
+            "selected":true,
             "table-key-properties": [
               "Id"
             ],
@@ -1157,7 +1161,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "discounts",
       "metadata": [
@@ -1509,18 +1514,6 @@
               "boolean"
             ]
           },
-          "TurnoverGross": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "TurnoverNet": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
           "StartDate": {
             "format": "date-time",
             "type": [
@@ -1549,25 +1542,6 @@
             ]
           },
           "Notes": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "PaymentMethod": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "MandateReference": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "MandateSignatureDate": {
-            "format": "date-time",
             "type": [
               "null",
               "string"
@@ -1602,7 +1576,8 @@
             "type": "object"
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "contracts",
       "metadata": [
@@ -1827,24 +1802,6 @@
         {
           "breadcrumb": [
             "properties",
-            "TurnoverGross"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "TurnoverNet"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
             "StartDate"
           ],
           "metadata": {
@@ -1882,33 +1839,6 @@
           "breadcrumb": [
             "properties",
             "Notes"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "PaymentMethod"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "MandateReference"
-          ],
-          "metadata": {
-            "inclusion": "available"
-          }
-        },
-        {
-          "breadcrumb": [
-            "properties",
-            "MandateSignatureDate"
           ],
           "metadata": {
             "inclusion": "available"
@@ -1979,7 +1909,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "payment_refunds",
       "metadata": [
@@ -2208,14 +2139,15 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "components",
       "metadata": [
         {
           "breadcrumb": [],
           "metadata": {
- 	    "selected":true,
+            "selected":true,
             "table-key-properties": [
               "Id"
             ],
@@ -2546,7 +2478,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "subscriptions",
       "metadata": [
@@ -2851,7 +2784,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "contract_changes",
       "metadata": [
@@ -3014,7 +2948,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "coupons",
       "metadata": [
@@ -3830,7 +3765,8 @@
             "type": "object"
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "orders",
       "metadata": [
@@ -4278,7 +4214,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "payment_transactions",
       "metadata": [
@@ -4512,14 +4449,15 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "plans",
       "metadata": [
         {
           "breadcrumb": [],
           "metadata": {
-	    "selected":true,
+            "selected":true,
             "table-key-properties": [
               "Id"
             ],
@@ -4813,7 +4751,8 @@
             ]
           }
         },
-        "type": "object"
+        "type": "object",
+        "additionalProperties": false
       },
       "stream": "customers",
       "metadata": [

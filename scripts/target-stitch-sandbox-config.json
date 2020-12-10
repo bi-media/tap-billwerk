@@ -1,0 +1,7 @@
+{
+  "client_id" : 178348,
+  "token" : "e81ebc0a96e96de858db8f806ad48d6b7a358154e84ed8e8366ee21d5f85eb82",
+  "small_batch_url": "https://api.eu-central-1.stitchdata.com/v2/import/batch",
+  "big_batch_url": "https://api.eu-central-1.stitchdata.com/v2/import/batch",
+  "batch_size_preferences": {}
+}
